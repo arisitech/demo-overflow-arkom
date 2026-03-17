@@ -117,7 +117,7 @@ st.markdown(f"""
 <div class="header-box">
     <div class="header-text">
         <h2>🖥️ Demo Overflow — Kasus Kasir</h2>
-        <p>Arsitektur dan Organisasi Komputer &nbsp;·&nbsp; STTI NIIT Jakarta</p>
+        <p>Arsitektur dan Organisasi Komputer</p>
     </div>
     <div class="header-logo">
         <img src="data:image/jpeg;base64,{LOGO_B64}" alt="ITech Logo">
