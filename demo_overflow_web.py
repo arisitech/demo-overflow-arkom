@@ -1,5 +1,8 @@
 import streamlit as st
 
+
+# ── LOGO ─────────────────────────────────────────────────────────────────────
+LOGO_B64 = "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQApgMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABgcBBQgEAwL/xAA7EAABAwMCAwQHBgQHAAAAAAAAAQIDBAURBhIHEyExMmFxFDZBUXKBsiIzUmJzdDRCocIVFiRTgpGT/8QAGAEBAQEBAQAAAAAAAAAAAAAAAAMCAQT/xAAfEQEAAwEAAgMBAQAAAAAAAAAAAQIRAxIhIjFBMmH/2gAMAwEAAhEDEQA/ALxAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMKAyMnPPEqaVut7s1ssiIj29Ecv4Gl4aRVV0tZ1VcqtFD1/4IbtTxiJYrfZxtgq4Cmh1tHNNYZWU7HvfvZ0YiqveMx7lSsbON9kZIDoGmrYbvK6phnYxYFRFkaqJnKe8pisnm9MqESeX75/86/iUrHHbZEs9pjlOfbqXIyczf4PqDGfQLn/5SF1cLIKmm0hDHWxSxTJLIqtmRUd3vEzfnFY3WK3mZzEwBjKDKE1GQDGUAyDGUGUAyDGUMgAYyhkAAABhTJhQOduJnrxd/jZ9DS8tI+qln/ZQ/QhRvEz14u/xs+hpeWkfVSz/ALKH6EPR1/iqPP8AqX1uF7oKCfkVcqsfjOEY5enyQ9NDWQXCBJ6V+6NVVMq1U7PMjmprFXXG4pNTNYrEjRv2n46m203Qz2+2Np6lER6PcuGuymFU86dOnWes1mPTbHK1X/HT/rv+pTqk5Wq/46f9d/1Kejh+qdfx1NF9yz4UI1cLzcbjcprVplsO6mXbWV86K6OB34GtTvv8OxPab2snWltM1Q1MrFA56J5NyanQlMlPo+1vVE5tRTNqZlTtdJIm9y/9uUhCjyppm8KvNfrG6JL24ZDCkefh2KuPmfSnu1ys1bT0Wo+TNTVD+XTXKBmxqyL2MkZ12qvsXsXs6Lg0FVZOIMt6dcIb1SRs5m5lKkruUjM9Gq3b16e3tJjqG3tumna2jqGojpad3Vq91+MoqL4Kan/XIe2urqe30ctXWSNigharpHr2NRCnr7xcuU070s0EFLSp3ZJk3yO8V64Ty6nr4kXmortBadc5XIte1k0ydm7axFwvzXPyPrwWsdDUUlZd6mGOaojqORFvTdsRGtcqonsVd39ClK1rXyli1pm3jDSW3ixf4JkWrbSVsKLh7Nmx2PBU7F80Usut1S2o0HV6is3RzKd0kaTMX7Lk9ip7fkuFPbe9K2W+ywS3GhjkkhduRyJtV35XY7U8Dza9jjh0HeIoWNZGyjc1rGphEROxEQzNqWmMhqItWJ2UY4ca4vOo78+iuXovJbTOkTkxK1coqJ7195J+IV7rNP6akuFv5XPbLGxOa3c3CuwvTKFH6T1HPpe5urqanjne6JY1bIqoiIqouenkbjVHESu1LaHW2ot9NBG+Rr1fHI5VTauU7Ss8vnuek46fH39p/wAMNWXTU7ril05H+nSPZyY1b3s5z1X3E/Kj4E9+8+UP9xbhHrGXmIV5ztYAATbDCmQoHOvEz14u/wAbPoaXlpD1Vs/7KH6ENHfOG1mvd1qLjVT1rZqhUV6RyNRvRETp9nwJXbqOO32+mooVc6OnibExXrlVRqYTPj0K3vFqxEJ0rMWmXoBkElGDlar610/67/qU6pUgz+FWm3yvld6buc5XKvpC9qrn3FeV4rup9KzbMTRI2y0vLemWvj2qnvRUI5pCoSgi/wAtVi8urt7eXBu6c+nTpG9vvwmEVPYqeJJ2tRrEanYiYPDdrNQ3eFjK6Hc6Nd0UrHKySJfex6dWr5KSbxCKjQ2pZL098erq9ltfJu2pUScxrVXuomcfM/WprPHSpHbLZeL5Pd6zLYYXXOVyRt/mleme6mfmqohIl03W52t1Pekh/wBvdCq4925Y93zznxNhaLFQWjmOpI3LPL99UTPWSWX4nr1XyN+cs+KL8QdJvuGj6aktbFfPbdroY0Tq9qN2uanjjr5oVroXWc+k554n0y1FHO7MsW7a9j06ZTPTOEwqLj+nXoNW+JHr5ojT98mdPW0DUnd3pYXLG53mre35mqdIiPG30zak7sK8v3FusmdElkpG0zGOR0j6nD1f+XCLhE+efIll5us964W3GvqaGSjlmo3LynrnP5k8F7Uz1Pfa+HmmbZOk8Nv5sjV3NWokWTC+CL0JBcLfTXGgmoayPmU0zNj2ZxlPd0OWtTY8Yditveyo7hRbaK56llguNJBVRJSOcjJo0eiLub16+ZMeKWnrNbdIy1NvtNFTTpPE1JIoWtciK7r1RCW2TSFksdY6rtlJyZnMViu5jl6KucdV8D33m0UV7oXUVyh51O5yOVm5UyqLlOw1PXb+X45FPjisuBXfvPlF/cW4aew6ZtOn1mW00vIWbHM+0q5x2dvmbhDF7eVtbpXIwABhoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/2Q=="
 # ── PAGE CONFIG ───────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="Demo Overflow — Kasus Kasir",
@@ -19,9 +22,23 @@ st.markdown("""
         padding: 20px 28px;
         border-radius: 10px;
         margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
     }
+    .header-text { flex: 1; }
     .header-box h2 { color: white; margin: 0 0 4px 0; font-size: 22px; }
     .header-box p  { color: #aab4d4; margin: 0; font-size: 13px; }
+    .header-logo {
+        background: white;
+        border-radius: 8px;
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+    }
+    .header-logo img { height: 40px; width: auto; display: block; }
 
     .barang-card {
         background: white;
@@ -96,10 +113,15 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ── HEADER ────────────────────────────────────────────────────────────────────
-st.markdown("""
+st.markdown(f"""
 <div class="header-box">
-    <h2>🖥️ Demo Overflow — Kasus Kasir</h2>
-    <p>Arsitektur dan Organisasi Komputer &nbsp;·&nbsp; STTI NIIT Jakarta &nbsp;·&nbsp; Arismunandar, M.T.I.</p>
+    <div class="header-text">
+        <h2>🖥️ Demo Overflow — Kasus Kasir</h2>
+        <p>Arsitektur dan Organisasi Komputer &nbsp;·&nbsp; STTI NIIT Jakarta &nbsp;·&nbsp; Arismunandar, M.T.I.</p>
+    </div>
+    <div class="header-logo">
+        <img src="data:image/jpeg;base64,{LOGO_B64}" alt="ITech Logo">
+    </div>
 </div>
 """, unsafe_allow_html=True)
 
